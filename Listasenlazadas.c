@@ -110,10 +110,13 @@ void getElementAt(Node *head, int index) {
 
 
 // Función encargada de liberar la memoria de la lista.
-void freeList() {
+void freeList(Node *head) {
 
-
-
+    while (head != NULL) {
+        Node *temp = head;
+        head = head->next;
+        free(temp);
+    }
 }
 
 
