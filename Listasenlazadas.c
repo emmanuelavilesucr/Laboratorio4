@@ -43,7 +43,7 @@ void deleteNode(Node **head, int value) {
         return;
     }
 
-   // Estas estructuras de control son las encargadas de eliminar un nodo específico de la lista en función de la posicion
+// Estas estructuras de control son las encargadas de eliminar un nodo específico de la lista en función de la posicion
     if (prev == NULL) {
         *head = current->next;  
     } else {
@@ -77,8 +77,8 @@ void printList(Node *head) {
 
 // Función esta encargada de  buscar un nodos dependiendo del valor
 void searchNode(Node *head, int value) {
-    Node *current = head;
 
+    Node *current = head;
 // En esta parte busca un valor de la lista  mientras se recorre la lista nodo por nodo
     while (current != NULL) { 
         if (current->data == value) {  // Si se encuentra el valor se imprime un mensaje indicando que se ha encontrado
@@ -91,10 +91,21 @@ void searchNode(Node *head, int value) {
 }
 
 
-// Función encargada de obtener el elemento enésimo
-void getElementAt() {
+// Función encargada de obtener el elemento enesimo 
+void getElementAt(Node *head, int index) {
 
+    Node *current = head;
+    int currentIndex = 0;
+    while (current != NULL && currentIndex) {   // Este bucle se ejecuta hasta que se alcanza el índice deseado o hasta llegar al final de la lista 
+        current = current->next;
+        currentIndex++;
+    }
 
+    if (current == NULL) {
+        printf("El elemento en el índice %d no existe en la lista.\n", index);
+    } else {
+        printf("Elemento en el índice %d: %d\n", index, current->data);
+    }
 }
 
 
