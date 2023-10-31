@@ -55,9 +55,12 @@ void deleteNode(Node **head, int value) {
 
 
 // Función encargada de  agregar un nodo al inicio de la lista
-void addToFront(){
+void addToFrontNode (**head, int value) {
 
-
+    Node *newNode = (Node *)malloc(sizeof(Node));
+    newNode->data = value;
+    newNode->next = *head;
+    *head = newNode;
 }
 
 
