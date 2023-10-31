@@ -50,24 +50,44 @@ void deleteNode(Node **head, int value) {
         prev->next = current->next;
     }
 
-    free(current); // Libera la memoria empleada para el nodo
+    free(current);   // Libera la memoria empleada para el nodo
 }
 
 
 // Función encargada de  agregar un nodo al inicio de la lista
 void addToFrontNode (**head, int value) {
 
-    Node *newNode = (Node *)malloc(sizeof(Node));
-    newNode->data = value;
+    Node *newNode = (Node *)malloc(sizeof(Node));  // Se reserva la memoria para el nuevo nodo
+    newNode->data = value; // Se establece un valor para el nuevo nodo
     newNode->next = *head;
-    *head = newNode;
+    *head = newNode;  // Actualiza el puntero para que apunte a otro nodo
 }
 
 
 // Función encargada de imprimir la lista
-void printList() {
+void printList(Node *head) {
 
+    Node *current = head;
+    while (current != NULL) {   // Recorre la lista mientras Current no sea Null
+        printf("%d -> ", current->data);  // Imprime  el valor del  nodo actual
+        current = current->next;
+    }
+    printf("NULL\n");
+}
 
+// Función esta encargada de  buscar un nodos dependiendo del valor
+void searchNode(Node *head, int value) {
+    Node *current = head;
+
+// En esta parte busca un valor de la lista  mientras se recorre la lista nodo por nodo
+    while (current != NULL) { 
+        if (current->data == value) {  // Si se encuentra el valor se imprime un mensaje indicando que se ha encontrado
+            printf("El valor %d se encuentra en la lista.\n", value);
+            return; 
+        }
+        current = current->next;
+    }
+    printf("El valor %d no se encuentra en la lista.\n", value);
 }
 
 
