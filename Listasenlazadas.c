@@ -2,19 +2,35 @@
 #include <stdlib.h>
 
 // Declaracion de la estructura del nodo.
+
 typedef struct Node {
     int data;
     struct Node *next;
 } Node;
 
+
 // Función encargada de agregar un nodo al final de la lista.
+
 void addNode() {
 
+    Node *newNode = (Node *)malloc(sizeof(Node));  // Se reserva espacio en memoria y asigna la dirección al puntero newNode
+    newNode->data = value; // Se asigna un valor a la variable data del Nodo
+    newNode->next = NULL;
 
+// Estas estructuras de control se encargan de insertar el nodo al final de la lista enlazada
+    if (*head == NULL) {  // Si la lista está vacía el nuevo nodo se convierte en el primer nodo
+        *head = newNode;
+    } else {   // Sino se enlaza el nuevo nodo al último nodo
+        Node *current = *head; 
+        while (current->next != NULL) {  // Recorre la lista hasta que Current apunte al ultimo nodo
+            current = current->next;
+        }
+        current->next = newNode;
+    }    
 }
 
-
 // Función encargarda de eliminar nodos.
+
 void deleteNode() {
 
 
@@ -22,7 +38,9 @@ void deleteNode() {
 
 }
 
+
 // Función encargada de  agregar un nodo al inicio de la lista
+
 void addToFront(){
 
 
@@ -36,14 +54,14 @@ void printList() {
 }
 
 
-// Función para obtener el elemento enésimo
+// Función encargada de obtener el elemento enésimo
 void getElementAt() {
 
 
 }
 
 
-// Función para liberar la memoria de la lista.
+// Función encargada de liberar la memoria de la lista.
 void freeList() {
 
 
