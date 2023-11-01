@@ -132,7 +132,7 @@ int main() {
     addNode(&head, 2);
     addNode(&head, 3);
   
-    printf("Lista inicial:\n");
+    printf("\x1b[31mLista inicial:\n\x1b[0m");
     usleep(2000000);  // Delay de 2 segundos (2000000 microsegundos)
     printList(head);
 
@@ -140,7 +140,7 @@ int main() {
    
     addToFront(&head, 0);
     usleep(2000000);
-    printf("Lista después de agregar un nodo al inicio:\n");
+    printf("\x1b[31mLista después de agregar un nodo al inicio:\n\x1b[0m");
     usleep(2000000);
     printList(head);
 
@@ -148,7 +148,7 @@ int main() {
 
     addNode(&head, 4);  
     usleep(2000000);
-    printf("Lista después de agregar un nodo al final:\n");
+    printf("\x1b[31mLista después de agregar un nodo al final:\n\x1b[0m");
     usleep(2000000);
     printList(head);
 
@@ -156,7 +156,7 @@ int main() {
 
     deleteNode(&head, 2);
     usleep(2000000);
-    printf("Lista después de eliminar un nodo:\n");
+    printf("\x1b[31mLista después de eliminar un nodo:\n\x1b[0m");
     usleep(2000000);
     printList(head);
     
@@ -164,7 +164,7 @@ int main() {
 // En esta seccion se llama a la funcion de la encargada de la busqueda y se asignan los valores a buscar.
   
     usleep(2000000);
-    printf("Busqueda de valores: \n");  
+    printf("\x1b[31mBusqueda de valores: \n\x1b[0m");  
     usleep(2000000); 
     searchNode(head, 3);
     usleep(2000000);
@@ -173,7 +173,7 @@ int main() {
 // En esta seccion se declaran los elementos enesimos mediante la funcion getElementAt.
 
     usleep(2000000);
-    printf("Indice: \n");
+    printf("\x1b[31mIndice: \n\x1b[0m");
     usleep(2000000);
     getElementAt(head, 2);
     usleep(2000000);
