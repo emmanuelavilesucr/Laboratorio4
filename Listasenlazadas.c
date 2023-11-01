@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>  // Este es el header file encargado del delay
 
 // Declaracion de la estructura del nodo.
 typedef struct Node {
@@ -130,37 +131,53 @@ int main() {
     addNode(&head, 1);
     addNode(&head, 2);
     addNode(&head, 3);
-
+  
     printf("Lista inicial:\n");
+    usleep(2000000);  // Delay de 2 segundos (2000000 microsegundos)
     printList(head);
 
 // Se llama a la funcion addToFront y se establece un nuevo nodo al inicio de la lista.
-
+   
     addToFront(&head, 0);
+    usleep(2000000);
     printf("Lista después de agregar un nodo al inicio:\n");
+    usleep(2000000);
     printList(head);
 
 // En esta parte se llama a la funcion addNNode y se establece un nuevo nodo al final de la lista. 
 
-    addNode(&head, 4);
+    addNode(&head, 4);  
+    usleep(2000000);
     printf("Lista después de agregar un nodo al final:\n");
+    usleep(2000000);
     printList(head);
-
-// En esta seccion
-
-    searchNode(head, 3);
-    searchNode(head, 5);
-
-// En esta seccion se declaran los elementos enesimos mediante la funcion getElementAt.
-
-    getElementAt(head, 2);
-    getElementAt(head, 5);
 
 // En esta parte se llama a la funcion deleteNode para eliminar nodos. 
 
     deleteNode(&head, 2);
-    printf("Lista después de eliminar un nodo por valor:\n");
+    usleep(2000000);
+    printf("Lista después de eliminar un nodo:\n");
+    usleep(2000000);
     printList(head);
+    
+
+// En esta seccion se llama a la funcion de la encargada de la busqueda y se asignan los valores a buscar.
+  
+    usleep(2000000);
+    printf("Busqueda de valores: \n");  
+    usleep(2000000); 
+    searchNode(head, 3);
+    usleep(2000000);
+    searchNode(head, 5);
+
+// En esta seccion se declaran los elementos enesimos mediante la funcion getElementAt.
+
+    usleep(2000000);
+    printf("Indice: \n");
+    usleep(2000000);
+    getElementAt(head, 2);
+    usleep(2000000);
+    getElementAt(head, 5);
 
     freeList(head); // Liberar la memoria al final del programa
 
