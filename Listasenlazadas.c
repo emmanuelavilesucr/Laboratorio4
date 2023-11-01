@@ -97,7 +97,7 @@ void getElementAt(Node *head, int index) {
 
     Node *current = head;
     int currentIndex = 0;
-    while (current != NULL && currentIndex) {   // Este bucle se ejecuta hasta que se alcanza el índice deseado o hasta llegar al final de la lista 
+    while (current != NULL && currentIndex < index) {   // Este bucle se ejecuta hasta que se alcanza el índice deseado o hasta llegar al final de la lista 
         current = current->next;
         currentIndex++;
     }
